@@ -1,0 +1,276 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+
+    min-height: 100vh;
+    font-family: "Comic Relief", system-ui;
+    font-weight: 800;
+    font-size: 14px;
+    color: #e9c46a;
+    background-image: url(images/14.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+}
+
+.container, .container-small, .container-big {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: auto;
+}
+
+h1 {
+    color: #fef9ef;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    font-size: 40px;
+}
+
+.input-section {
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    margin-bottom: 20px;
+}
+
+input {
+    font-family: "Comic Relief", system-ui;
+    background-color: rgb(255, 255, 255, 0.1);
+    color: bisque;
+    backdrop-filter: blur(1px);
+    border-radius: 10px;
+    outline: none;
+    border: none;
+    padding: 8px 20px;
+    
+}
+
+input::placeholder {
+    font-style: italic;
+}
+
+.add-input {
+    width: 50%;
+}
+
+
+.todo {
+    width: 65%;
+    border-radius: 30px;
+    overflow: hidden;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.container {
+    display: grid;
+    grid-template-columns: minmax(220px, 1fr) minmax(300px, 3fr);
+    gap: 8px;
+    align-items: start;
+   
+}
+
+@media (max-width:500px) {
+    h1 {
+        font-size: 30px;
+    }
+    body {
+        font-size: 11px;
+    }
+
+    .todo {
+        margin-top: 50px;
+        padding: 10px;
+       
+    }
+    .container {
+        display: grid;
+        grid-template-columns: 1fr;
+        margin-top: 5px;
+    }
+
+    .container-big {
+       max-height: 20vh; 
+    }
+    .container-small {
+       
+    }
+
+    .add-input {
+        width: 100%;
+        
+    }
+    
+}
+
+
+@media (min-width:501px) {
+    .container {
+        grid-template-columns: minmax(150px, 1fr) minmax(300px, 3fr);
+    }
+    h1 {
+        font-size: 30px;
+    }
+    .container-small-p {
+        font-size: 13px;
+    }
+    .container-big {
+        
+    }
+}
+
+
+.container-small {
+    backdrop-filter: blur(20px);
+    border-radius: 15px;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.container-big {
+    backdrop-filter: blur(20px);
+    border-radius: 15px;
+    padding-left: 10px;
+    padding-right: 15px;
+    max-height: 52vh;
+    overflow-y: auto;
+    scrollbar-color: rgba(255, 255, 255, 0.1) transparent;
+    align-items: center;
+   
+}
+
+.first-todo {
+    color: #faedcd;
+    font-weight: 400;
+    font-style: italic;
+    padding-top: 20px;
+
+    opacity: 0.3;
+}
+
+.container-big::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: none;
+}
+
+.container-big::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+}
+
+.div-small {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 40px;
+}
+
+button {
+    padding: 6px 20px;
+    border-radius: 10px;
+    border: none;
+    background-color: #f4a259;
+    background-color: #;
+    color: black;
+    font-family: "Comic Relief";
+    font-weight: 600;
+    font-size: 13px;
+    cursor: pointer;
+}
+
+.delete-all {
+    background-color: #ef233c;
+}
+
+
+.todo-ul {
+    margin-top: 15px;
+}
+
+.todo-li {
+    padding: 5px;
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.todo-p {
+    width: 100%;
+    min-width: 0;
+    background-color: rgba(202, 191, 145, 0.5);
+    backdrop-filter: blur(10px);
+    color: black;
+    font-weight: 500;
+    border-radius: 15px;
+    font-size: 12px;
+    align-items: center;
+    padding: 8px;
+    padding-inline-start: 20px;
+    overflow-wrap: break-word;
+
+
+}
+
+.div-icon {
+    display: flex;
+    gap: 7px;
+    flex-shrink: 0;
+}
+
+
+
+.todo-li i {
+    background-color: rgb(255, 255, 255, 0.1);
+    backdrop-filter: blur(8px);
+    color: #eec170;
+    cursor: pointer;
+    font-size: 12px;
+    border-radius: 6px;
+    padding: 10px 8px;
+    padding-inline-end: 18px;
+}
+
+.search {
+    position: relative;
+    padding-right: 40px;
+    
+}
+
+.search-icon {
+    color: bisque;
+    opacity: 0.3;
+    position: absolute;
+    top: 25px;
+    right: 30px;
+    cursor: pointer;
+    z-index: 1;
+    
+}
+
+.completed {
+    text-decoration: line-through;
+    font-style: italic;
+    text-decoration-thickness: 2px;
+    opacity: 0.3;
+}
+
+.icon-check {
+    opacity: 0.2;
+}
